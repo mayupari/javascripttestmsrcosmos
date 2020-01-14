@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Login page
+</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body><center>
+<div class="container">
+<table>
+        <tr>
+            <td>
+<b><h1><font size="6" color="blue"> Login Page</font></b></h1>
+<center><h3><label style="color:#F00">(*This field is mandatory.)</center></h3></label><br>
+<form name="login" action="register.html">
+<div>
+                        <label><sup style="color:#F00">*</sup>Email:</label>
+						<input required type="text" name="email"/>
+</div>
+<div>
+                             <label><sup style="color:#F00">*</sup>Password:</label>
+							
+                             <input required type="password" name="pass" />
+</div>
+<div  class="form-action-buttons">
+<input type="submit" onclick="check(this.form)" value="Login" style="color:#F00"/>
+<input type="submit" value="Registration" onclick="check1(this.form)" style="color:#F00"/>
+</div>
+</form>
+<script language="javascript">
+function check(form)
+{
+ if(form.email.value == "user@gmail.com" && form.pass.value == "123456")
+  {
+    window.open('index.html')
+  }
+ else
+ {
+   alert("Error Password or Username invalid")
+     }
+}
+function check1(form)
+{
+ if(form.email.value == "user@gmail.com" && form.pass.value == "123456")
+  {
+    window.open('register.html')
+  }
+ else
+ {
+   alert("Error Password or Username invalid")
+     }
+}
+</script>
+</center>
+</table>
+        </tr>
+            </td>
+			</div>
+</body>
+</html>

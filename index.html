@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        DASHBOARD
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<center><h3><label style="color:#F00">(*This field is mandatory.)</center></h3></label><br>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Student ID*</label><label class="validation-error hide" id="idValidationError">This field is required.</label>
+                        <input required type="text" name="sid" id="sid" pattern="[0-9]">
+                    </div>
+                    <div>
+                        <label>Student Name*</label>
+                        <input required type="text" name="sname" id="sname" pattern="[A-Za-z]{1,15}">
+                    </div>
+                    <div>
+                        <label>Email*</label>
+                        <input required type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
+                    <div>
+                        <label>Class*</label>
+                        <input required type="text" name="class" id="class" pattern= "[0-9]">
+                    </div>
+					<div>
+                        <label>Enrollment Year*</label>
+                        <input required type="text" name="year" id="year" pattern="[0-9]">
+                    </div>
+					<div>
+                        <label>City*</label>
+                        <input required type="text" name="city" id="city" pattern="[A-Za-z]{1,15}">
+                    </div>
+					<div>
+                        <label>Country*</label>
+                        <input required type="text" name="country" id="country" pattern="[A-Za-z]{1,15}">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Save" style="color:#F00"/>
+						<input type="submit" value="Clear" style="color:#F00"/>
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Class</th>
+							<th>Year</th>
+							<th>City</th>
+							<th>Country</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>

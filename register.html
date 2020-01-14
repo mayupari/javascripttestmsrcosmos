@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+function validation()
+{
+var x=validateFirstName();
+x=validateMiddleName();
+x=validateLastName();
+x=validateEmail();
+x=validateMobileNumber();
+x=validatePassword();
+x=validateConfirmPassword();
+x=validateMatchpass();
+return x;
+}
+ var alphaExp=/^[a-zA-Z]+$/;
+var numericExp=/^[0-9]+$/;
+var numalphaExp=/^[0-9a-zA-Z]+$/; 
+function validateFirstName()
+{
+var x= document.register.fname.value;
+if (x == null || x == "")
+{
+alert(" First Name must be filled out");
+document.register.fname.focus();
+return false;
+}
+if(alphaExp(x))
+{
+alert(" First Name only conatins characters");
+document.register.fname.focus();
+return false;
+}
+if((x.length > 8))
+	{
+alert(" Your  first name contains minimum 8 characters");
+document.register.fname.select();
+return false;
+	}
+}
+function validateMiddleName()
+{
+var x= document.register.mname.value;
+if (x == null || x == "")
+{
+alert(" Middle Name must be filled out");
+document.register.mname.focus();
+return false;
+}
+if((x.length > 8))
+	{
+alert(" Your middle  name contains minimum 8 characters");
+document.register.mname.select();
+return false;
+	}
+}
+function validateLastName()
+{
+var x= document.register.lname.value;
+if (x == null || x == "")
+{
+alert(" last Name must be filled out");
+document.register.lname.focus();
+return false;
+}
+if((x.length > 8))
+	{
+alert(" Your last  name contains minimum 8 characters");
+document.register.lname.select();
+return false;
+	}
+}
+function validateEmail()
+{
+	var y = document.register.email.value;
+	if (y == null || y == "")
+                   {
+        	alert("email must be filled out");
+		return false;
+                     }
+	var atpos = y.indexOf("@");
+    	var dotpos = y.lastIndexOf(".");
+	
+   	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=y.length) 
+               {
+        	alert("Not a valid e-mail address");	
+		return false;
+               }
+}
+function validateMobileNumber()
+{
+var x= document.register.no.value;
+if(x=="" || x==null)
+	{
+alert("please Enter the Phone  Number");
+document.register.no.focus();
+return false;
+	}
+if(isNaN(x))
+	{
+alert("Enter the valid Phone Number(Like : 9566137117)");
+document.register.no.focus();
+	return false;
+	}
+if((x.length < 1) || (x.length > 10))
+	{
+alert(" Your Phone Number must be 1 to 10 Integers");
+document.register.no.select();
+return false;
+	}
+}
+function validatePassword()
+{
+var x= document.register.pass.value;
+if (x == null || x == "")
+{
+alert(" Password must be filled out");
+document.register.pass.focus();
+return false;
+}
+if((x.length > 8))
+	{
+alert(" Your password  contains minimum 8 characters");
+document.register.pass.select();
+return false;
+	}
+}
+function validateConfirmPasswordPassword()
+{
+var x= document.register.cpass.value;
+if (x == null || x == "")
+{
+alert("  confirm Password must be filled out");
+document.register.cpass.focus();
+return false;
+}
+if((x.length > 8))
+	{
+alert(" Your confirm  password  contains minimum 8 characters");
+document.register.cpass.select();
+return false;
+	}
+}
+function validateMatchpass()
+{  
+var firstpassword=document.register.pass.value;  
+var secondpassword=document.register.cpass.value;  
+  
+if(pass==cpass)
+{  
+return true;  
+}  
+else
+{  
+alert("password must be same!");  
+document.register.cpass.value;
+return false;  
+}  
+}  
+</script>
+</head>
+<body>
+<center>
+<table>
+        <tr>
+            <td>
+<b><h1><font size="6" color="orange"> Registration</font></b></h1>
+<center><h3><label style="color:#F00">(*This field is mandatory.)</center></h3></label><br>
+<form name="register" onsubmit="return validation()" autocomplete="off" action="login.html" >
+<div>
+<label><sup style="color:#F00">*</sup>First Name:</label>
+<input  required type="text" name="fname" id="t1" />
+</div><br><br>
+<div>
+<label>Middle Name:</label>
+<input  type="text" name="mname" id="t2"/></div><br><br>
+<div>
+<label><sup style="color:#F00">*</sup>Last Name:</label>
+<input required type="text" name="lname" id="t3"/></div><br><br>
+<div>
+<label><sup style="color:#F00">*</sup>Email:</label>
+<input   required type="text" name="email" id="t4"/></div><br><br>
+<div>
+<label>Mobile Number:</label>
+<input  type="text" name="no" id="t5"/></div><br><br>
+<div>
+<label><sup style="color:#F00">*</sup>Password:</label>
+<input required type="password" name="pass" id="t6"  pattern=".{4,}" title="six or more characters" /></div><br><br>
+<div>
+<label><sup style="color:#F00">*</sup>Confirm Password:</label>
+<input required  type="password" name="cpass" id="t7" pattern=".{4,}" title="six or more characters" /></div><br><br>
+
+<div class="form-action-buttons"> 
+<input type="submit"  value="Register"   style="color:#F00"/>
+<input type="submit"  value="Reset"   style="color:#F00"/>
+</div>
+</form>
+
+</center>
+</table>
+        </tr>
+            </td>
+</body>
+</html>
